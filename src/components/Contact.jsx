@@ -1,50 +1,20 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Copy, Check, Send, ArrowUpRight, Sparkles, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, Copy, Check, Send, ArrowUpRight } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Contact({ onShowToast }) {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-  const [selectedIntent, setSelectedIntent] = useState(null);
   const [status, setStatus] = useState(null); // 'submitting' | 'success'
+  const [copied, setCopied] = useState(false);
 
-  const intentChips = [
-    {
-      label: 'Full-Time Role',
-      subject: 'Job Opportunity: Full-Stack Developer Role',
-      placeholder: 'Hi Dula, we came across your work and have an open Full-Stack Developer position...'
-    },
-    {
-      label: 'Freelance Project',
-      subject: 'Freelance Inquiry: New Web Platform Project',
-      placeholder: 'Hi Dula, we are looking for an experienced full-stack engineer to build a platform for...'
-    },
-    {
-      label: 'Contract Engineering',
-      subject: 'Contract Consulting: System Architecture & APIs',
-      placeholder: 'Hi Dula, we would like to discuss contract engineering support for our backend/frontend...'
-    },
-    {
-      label: 'Quick Intro',
-      subject: 'Networking & Introduction',
-      placeholder: 'Hi Dula, wanted to connect and discuss your projects...'
-    }
-  ];
-
-  const handleSelectIntent = (chip) => {
-    setSelectedIntent(chip.label);
-    setFormData((prev) => ({
-      ...prev,
-      subject: chip.subject,
-      message: prev.message || chip.placeholder
-    }));
-  };
-
-  const handleCopy = (text, label) => {
-    navigator.clipboard.writeText(text);
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(personalInfo.contacts.email);
+    setCopied(true);
     if (onShowToast) {
-      onShowToast(`${label} copied to clipboard!`);
+      onShowToast('Email copied to clipboard!');
     }
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleSubmit = (e) => {
@@ -54,10 +24,10 @@ export default function Contact({ onShowToast }) {
     setTimeout(() => {
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setSelectedIntent(null);
       if (onShowToast) {
         onShowToast('Message sent! Thanks for reaching out.');
       }
+      setTimeout(() => setStatus(null), 5000);
     }, 600);
   };
 
@@ -66,191 +36,168 @@ export default function Contact({ onShowToast }) {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">
-            <span className="section-title-num">05.</span> Contact
+            <span className="section-title-num">05.</span> Get In Touch
           </h2>
           <p className="section-subtitle">
-            Have a project in mind or looking for a full-stack engineer? Let's connect.
+            Have a question, opportunity, or project in mind? Let's talk.
           </p>
         </div>
 
         <div className="contact-grid">
-          {/* Contact Details & Quick Copy Snippets */}
-          <div>
-            <p style={{ marginBottom: '1.5rem', fontSize: '0.975rem', color: 'var(--text-secondary)' }}>
-              I am currently available for full-time software engineering positions, contract development, and custom platform delivery.
+          {/* Left Column: Direct Info & Availability */}
+          <div className="contact-info-panel">
+            <div className="contact-status-badge">
+              <span className="status-dot"></span>
+              <span>Available for full-time roles & projects</span>
+            </div>
+
+            <h3 className="contact-panel-title">
+              Let's build something exceptional together.
+            </h3>
+            
+            <p className="contact-panel-desc">
+              I'm always interested in discussing new opportunities, platform engineering, or freelance projects. Feel free to reach out directly.
             </p>
 
-            <div className="contact-info-list">
-              {/* Email */}
-              <div className="contact-info-card">
-                <div className="contact-icon-box">
+            <div className="contact-cards-stack">
+              {/* Email Card */}
+              <div className="modern-contact-card">
+                <div className="modern-card-icon">
                   <Mail size={18} />
                 </div>
-                <div style={{ flex: 1 }}>
-                  <div className="contact-detail-label">Direct Email</div>
-                  <a
-                    href={`mailto:${personalInfo.contacts.email}`}
-                    className="contact-detail-value"
-                    style={{ display: 'block', color: 'var(--text-primary)' }}
-                  >
+                <div className="modern-card-body">
+                  <span className="modern-card-label">Email</span>
+                  <a href={`mailto:${personalInfo.contacts.email}`} className="modern-card-link">
                     {personalInfo.contacts.email}
                   </a>
-                  <button
-                    type="button"
-                    onClick={() => handleCopy(personalInfo.contacts.email, 'Email address')}
-                    className="copy-btn"
-                    aria-label="Copy email address"
-                  >
-                    <Copy size={12} />
-                    <span>Copy email</span>
-                  </button>
                 </div>
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="modern-card-copy-btn"
+                  title="Copy email to clipboard"
+                  aria-label="Copy email address"
+                >
+                  {copied ? <Check size={14} color="#10b981" /> : <Copy size={14} />}
+                </button>
               </div>
 
-              {/* GitHub */}
-              <div className="contact-info-card">
-                <div className="contact-icon-box">
+              {/* GitHub Card */}
+              <a
+                href={personalInfo.contacts.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="modern-contact-card modern-contact-card-interactive"
+              >
+                <div className="modern-card-icon">
                   <GithubIcon size={18} />
                 </div>
-                <div style={{ flex: 1 }}>
-                  <div className="contact-detail-label">GitHub</div>
-                  <a
-                    href={personalInfo.contacts.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-detail-value"
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}
-                  >
-                    <span>github.com/{personalInfo.contacts.githubUsername}</span>
-                    <ArrowUpRight size={13} />
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => handleCopy(personalInfo.contacts.github, 'GitHub link')}
-                    className="copy-btn"
-                    style={{ display: 'block' }}
-                  >
-                    <Copy size={12} />
-                    <span>Copy profile URL</span>
-                  </button>
+                <div className="modern-card-body">
+                  <span className="modern-card-label">GitHub</span>
+                  <span className="modern-card-link">
+                    github.com/{personalInfo.contacts.githubUsername}
+                  </span>
                 </div>
-              </div>
+                <ArrowUpRight size={16} className="modern-card-arrow" />
+              </a>
 
-              {/* Location & Availability */}
-              <div className="contact-info-card">
-                <div className="contact-icon-box">
+              {/* Location Card */}
+              <div className="modern-contact-card">
+                <div className="modern-card-icon">
                   <MapPin size={18} />
                 </div>
-                <div>
-                  <div className="contact-detail-label">Location & Working Hours</div>
-                  <div className="contact-detail-value">{personalInfo.contacts.location}</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', marginTop: '0.2rem' }}>
-                    {personalInfo.workingHours}
-                  </div>
+                <div className="modern-card-body">
+                  <span className="modern-card-label">Location</span>
+                  <span className="modern-card-text">
+                    {personalInfo.contacts.location} <span className="text-muted">({personalInfo.timezone})</span>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Interactive Message Form with Intent Chips */}
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div style={{ marginBottom: '1.25rem' }}>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '0.35rem' }}>Send a Message</h3>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-tertiary)' }}>
-                Select an inquiry type to auto-fill or enter your custom message:
-              </p>
-            </div>
+          {/* Right Column: Modern Contact Form */}
+          <div className="contact-form-panel">
+            <form className="modern-contact-form" onSubmit={handleSubmit}>
+              {status === 'success' && (
+                <div className="form-alert form-alert-success">
+                  <Check size={16} />
+                  <span>Thank you! Your message has been sent successfully. I'll get back to you soon.</span>
+                </div>
+              )}
 
-            {/* Inquiry Intent Chips */}
-            <div className="intent-chips-wrap">
-              {intentChips.map((chip) => (
-                <button
-                  key={chip.label}
-                  type="button"
-                  onClick={() => handleSelectIntent(chip)}
-                  className={`intent-chip ${selectedIntent === chip.label ? 'active' : ''}`}
-                >
-                  <span>{chip.label}</span>
-                </button>
-              ))}
-            </div>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="contact-name" className="form-label">
+                    Your Name
+                  </label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    required
+                    placeholder="e.g. John Doe"
+                    className="form-input"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  />
+                </div>
 
-            {status === 'success' && (
-              <div className="form-alert form-alert-success">
-                Thank you! Your message has been sent successfully. I will review and reply promptly.
+                <div className="form-group">
+                  <label htmlFor="contact-email" className="form-label">
+                    Email Address
+                  </label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    required
+                    placeholder="e.g. john@example.com"
+                    className="form-input"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  />
+                </div>
               </div>
-            )}
 
-            <div className="form-group">
-              <label htmlFor="contact-name" className="form-label">
-                Name
-              </label>
-              <input
-                id="contact-name"
-                type="text"
-                required
-                placeholder="Your name or company"
-                className="form-input"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              />
-            </div>
+              <div className="form-group">
+                <label htmlFor="contact-subject" className="form-label">
+                  Subject
+                </label>
+                <input
+                  id="contact-subject"
+                  type="text"
+                  required
+                  placeholder="e.g. Job Opportunity / Platform Project"
+                  className="form-input"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="contact-email" className="form-label">
-                Email Address
-              </label>
-              <input
-                id="contact-email"
-                type="email"
-                required
-                placeholder="your.email@example.com"
-                className="form-input"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              />
-            </div>
+              <div className="form-group">
+                <label htmlFor="contact-message" className="form-label">
+                  Message
+                </label>
+                <textarea
+                  id="contact-message"
+                  required
+                  rows={4}
+                  placeholder="Tell me about your project, role, or ideas..."
+                  className="form-textarea"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="contact-subject" className="form-label">
-                Subject
-              </label>
-              <input
-                id="contact-subject"
-                type="text"
-                required
-                placeholder="Project Inquiry / Role Opportunity"
-                className="form-input"
-                value={formData.subject}
-                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="contact-message" className="form-label">
-                Message
-              </label>
-              <textarea
-                id="contact-message"
-                required
-                rows={4}
-                placeholder="Describe your project requirements, technology needs, or role overview..."
-                className="form-textarea"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="btn btn-primary"
-              style={{ width: '100%', padding: '0.75rem' }}
-              disabled={status === 'submitting'}
-            >
-              <Send size={15} />
-              <span>{status === 'submitting' ? 'Sending...' : 'Send Message'}</span>
-            </button>
-          </form>
+              <button
+                type="submit"
+                className="btn btn-primary btn-submit"
+                disabled={status === 'submitting'}
+              >
+                <Send size={15} />
+                <span>{status === 'submitting' ? 'Sending...' : 'Send Message'}</span>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

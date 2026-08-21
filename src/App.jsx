@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,12 +7,10 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import CommandPalette from './components/CommandPalette';
 import ResumeModal from './components/ResumeModal';
 import { Check } from 'lucide-react';
 
 export default function App() {
-  const [paletteOpen, setPaletteOpen] = useState(false);
   const [resumeOpen, setResumeOpen] = useState(false);
   const [toast, setToast] = useState(null);
 
@@ -23,23 +21,9 @@ export default function App() {
     }, 2800);
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      // Cmd+K or Ctrl+K
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        setPaletteOpen((prev) => !prev);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
   return (
     <>
       <Navbar
-        onOpenPalette={() => setPaletteOpen(true)}
         onOpenResume={() => setResumeOpen(true)}
       />
 
@@ -53,14 +37,6 @@ export default function App() {
       </main>
 
       <Footer onOpenResume={() => setResumeOpen(true)} />
-
-      {/* Global Command Palette (⌘K) */}
-      <CommandPalette
-        isOpen={paletteOpen}
-        onClose={() => setPaletteOpen(false)}
-        onOpenResume={() => setResumeOpen(true)}
-        onShowToast={showToast}
-      />
 
       {/* ATS-Friendly Resume Modal */}
       <ResumeModal

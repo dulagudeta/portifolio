@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileDown, Search } from 'lucide-react';
+import { Menu, X, FileDown } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
-export default function Navbar({ onOpenPalette, onOpenResume }) {
+export default function Navbar({ onOpenResume }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
@@ -34,7 +34,6 @@ export default function Navbar({ onOpenPalette, onOpenResume }) {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -60,18 +59,6 @@ export default function Navbar({ onOpenPalette, onOpenResume }) {
 
         {/* Header Actions */}
         <div className="nav-actions">
-          {/* Command Palette Trigger */}
-          <button
-            onClick={onOpenPalette}
-            className="command-palette-trigger"
-            aria-label="Open Command Menu (Press Ctrl+K or Cmd+K)"
-            title="Command Menu (⌘K)"
-          >
-            <Search size={14} />
-            <span className="cmd-label">Search</span>
-            <kbd className="cmd-kbd">⌘K</kbd>
-          </button>
-
           {/* Direct PDF Resume Link */}
           <a
             href={personalInfo.resumeUrl}
@@ -114,21 +101,6 @@ export default function Navbar({ onOpenPalette, onOpenResume }) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="mobile-menu-drawer">
-          <button
-            onClick={() => {
-              setMobileMenuOpen(false);
-              onOpenPalette();
-            }}
-            className="command-palette-trigger"
-            style={{ width: '100%', justifyContent: 'space-between', marginBottom: '0.5rem' }}
-          >
-            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Search size={14} />
-              <span>Search / Quick Commands</span>
-            </span>
-            <kbd className="cmd-kbd">⌘K</kbd>
-          </button>
-
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -142,6 +114,14 @@ export default function Navbar({ onOpenPalette, onOpenResume }) {
 
           <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
             <a
+              href="#contact"
+              className="btn btn-primary btn-sm"
+              style={{ flex: 1 }}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span>Contact</span>
+            </a>
+            <a
               href={personalInfo.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -151,16 +131,6 @@ export default function Navbar({ onOpenPalette, onOpenResume }) {
             >
               <FileDown size={14} />
               <span>Resume PDF</span>
-            </a>
-            <a
-              href={personalInfo.contacts.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary btn-sm"
-              style={{ flex: 1 }}
-            >
-              <GithubIcon size={14} />
-              <span>GitHub</span>
             </a>
           </div>
         </div>

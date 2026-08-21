@@ -9,17 +9,17 @@ export const personalInfo = {
   headline: "Full-Stack Developer building robust, production-grade platforms end to end.",
   valueProposition:
     "I build and deploy full-stack platforms end to end, from database architecture and secure APIs to responsive, polished user interfaces.",
-  resumeUrl: "/Dula_Gudeta_Resume.pdf", // Place your real resume.pdf in the public/ folder
+  resumeUrl: "/Dula_Gudeta_Resume.pdf",
   bio: [
     "Full-stack developer with hands-on production experience building and deploying live platforms for hospitality and healthcare clients.",
     "Comfortable owning a feature end to end—from system architecture, API design, and database schema to cloud deployment and performance optimization.",
     "Currently shipping software at Yanol Tech while taking on select freelance client work."
   ],
   contacts: {
-    email: "dulagudeta@gmail.com",
+    email: "dulagudeta22@gmail.com",
     phone: "+251 900 000 000",
-    github: "https://github.com/DulaGudeta",
-    githubUsername: "DulaGudeta",
+    github: "https://github.com/dulagudeta",
+    githubUsername: "dulagudeta",
     location: "Addis Ababa, Ethiopia",
   },
   stats: [
@@ -55,10 +55,9 @@ export const skillsData = [
 
 export const projectCategories = [
   { id: "all", label: "All Projects" },
-  { id: "live", label: "Live Platforms" },
-  { id: "health-hosp", label: "Healthcare & Hospitality" },
-  { id: "backend-api", label: "Backend & APIs" },
-  { id: "payments", label: "Payments (Chapa)" }
+  { id: "web", label: "Web & Platforms" },
+  { id: "systems", label: "Systems & APIs" },
+  { id: "bots", label: "Bots & Automation" }
 ];
 
 export const projectsData = [
@@ -66,13 +65,13 @@ export const projectsData = [
     id: "noora-resort",
     title: "Noora Resort",
     tagline: "Full-Stack Resort Management & Virtual Experience Platform",
-    categories: ["live", "health-hosp", "payments"],
+    categories: ["web", "systems"],
     description:
       "Comprehensive resort operations platform featuring room booking, staff management, fully editable CMS, smart QR-code menu with Chapa payment integration and live kitchen order screens, plus an interactive 360-degree virtual tour.",
     highlights: [
       "Hotel & room reservations engine with dynamic availability calendar",
-      "Live kitchen display system (KDS) synced with QR ordering",
-      "Integrated Chapa payments for direct checkout",
+      "Live kitchen display system (KDS) synced with real-time QR ordering",
+      "Integrated Chapa payments for instant checkout & settlement",
       "Interactive 360° virtual property tour rendered with Three.js",
       "Role-based staff management and modular content management system"
     ],
@@ -81,49 +80,53 @@ export const projectsData = [
       backend: "Node.js / Express REST API with webhook signature validation for Chapa transactions, stateful order queue, and JWT auth.",
       frontend: "Modular React frontend with Three.js equirectangular panorama projection and real-time order status polling."
     },
-    techStack: ["React", "Node.js / Express", "MySQL", "Three.js", "Chapa"],
-    status: "Live",
+    techStack: ["React", "Node.js", "Express", "MySQL", "Three.js", "Chapa"],
+    status: "Live Production",
     statusType: "live",
-    liveUrl: "https://noora-resort.example.com",
-    githubUrl: "https://github.com/DulaGudeta/noora-resort",
+    codeAccess: "private",
+    company: "Noora Resort",
+    liveUrl: "https://nooraresort.com",
+    githubUrl: null,
     featured: true
   },
   {
     id: "medischedule",
     title: "MediSchedule",
     tagline: "Hospital Appointment Booking & Subscription Platform",
-    categories: ["live", "health-hosp", "payments"],
+    categories: ["web", "systems"],
     description:
       "Modern patient booking platform engineered with a polished, fluid React frontend and secure Chapa payment integration handling consultation fees and recurring medical subscriptions.",
     highlights: [
-      "Real-time doctor schedule slot booking with conflict avoidance",
-      "Chapa gateway integration for upfront booking fees & subscriptions",
-      "Accessible, responsive UI with smooth state management",
-      "Automated appointment confirmation receipts and status tracking"
+      "Real-time doctor schedule slot booking with automated conflict avoidance",
+      "Chapa gateway integration for upfront booking fees & monthly subscriptions",
+      "Accessible, responsive patient dashboard with instant confirmation receipts",
+      "Automated SMS / email booking reminders and doctor schedule sync"
     ],
     architecture: {
       database: "PostgreSQL with composite indexes on physician availability slots to prevent double-booking anomalies.",
       backend: "Node.js service with idempotent Chapa payment verification and automated email receipt dispatchers.",
       frontend: "Optimized React UI with keyboard navigation, custom date-time pickers, and lightweight state containers."
     },
-    techStack: ["React", "Node.js", "Chapa", "Express", "PostgreSQL"],
-    status: "Live",
+    techStack: ["React", "Node.js", "Express", "PostgreSQL", "Chapa API"],
+    status: "Live Production",
     statusType: "live",
+    codeAccess: "private",
+    company: "Client Production",
     liveUrl: "https://medischedule.example.com",
-    githubUrl: "https://github.com/DulaGudeta/medischedule",
+    githubUrl: null,
     featured: true
   },
   {
     id: "yannet-hospital",
     title: "Yannet General Hospital Platform",
-    tagline: "Patient-Facing Hospital Portal & Clinical Administration",
-    categories: ["live", "health-hosp", "backend-api"],
+    tagline: "Patient Portal, Clinical Admin & AI Diagnostic Triage Bot",
+    categories: ["web", "systems", "bots"],
     description:
-      "Enterprise healthcare portal featuring department directories, physician profiles, multi-branch locator, patient appointment scheduling with medical document uploads, an AI-assisted symptom-to-department triage chatbot, and an administrative staff portal.",
+      "Enterprise healthcare portal featuring department directories, physician profiles, multi-branch locator, patient appointment scheduling, and an automated symptom-to-department triage bot that guides patients to the correct clinic.",
     highlights: [
-      "AI-assisted triage bot routing patients to suitable medical departments",
-      "Secure document and lab result upload pipeline",
-      "Multi-branch locator with interactive department directories",
+      "AI-assisted triage bot routing patients to suitable medical departments based on symptoms",
+      "Multi-branch clinic locator with interactive department schedules",
+      "Secure document and lab result upload pipeline with patient privacy guards",
       "Protected staff & physician admin dashboard for schedule management"
     ],
     architecture: {
@@ -131,22 +134,24 @@ export const projectsData = [
       backend: "Next.js / Node.js backend with secured file storage endpoints, role-based middleware, and AI inference triage integration.",
       frontend: "Next.js server-rendered pages for medical SEO, instant branch location mapping, and multi-step intake flows."
     },
-    techStack: ["Next.js", "React", "Node.js / Express", "PostgreSQL"],
-    status: "Live",
+    techStack: ["Next.js", "React", "Node.js", "PostgreSQL", "AI Triage Engine"],
+    status: "Live Production",
     statusType: "live",
+    codeAccess: "private",
+    company: "Yannet General Hospital",
     liveUrl: "https://yannethospital.example.com",
-    githubUrl: "https://github.com/DulaGudeta/yannet-hospital",
+    githubUrl: null,
     featured: true
   },
   {
     id: "komii-backend",
     title: "Komii Backend API",
-    tagline: "Open-Source Community Complaint & Issue Resolution Backend",
-    categories: ["backend-api"],
+    tagline: "Open-Source Community Issue Resolution & Civic Reporting Engine",
+    categories: ["systems"],
     description:
       "Robust, open-source RESTful backend for community issue tracking and municipal complaints. Built with Django REST Framework featuring role-based access control, issue status lifecycle management, and clean modular architecture.",
     highlights: [
-      "Role-based permission architecture (Citizens, Moderators, Admins)",
+      "Role-based permission architecture (Citizens, Field Operators, Admins)",
       "Strict data validation, pagination, and filtering endpoints",
       "Automated unit testing suite with comprehensive coverage",
       "Containerized with Docker for seamless development and deployment"
@@ -159,8 +164,35 @@ export const projectsData = [
     techStack: ["Django", "Django REST Framework", "PostgreSQL", "Docker", "Python"],
     status: "Open Source",
     statusType: "open-source",
+    codeAccess: "public",
     liveUrl: null,
     githubUrl: "https://github.com/DulaGudeta/komii-backend-api",
+    featured: false
+  },
+  {
+    id: "telegram-order-bot",
+    title: "Telegram Commercial Dispatcher Bot",
+    tagline: "Automated Commerce & Order Notification Bot Engine",
+    categories: ["bots", "systems"],
+    description:
+      "High-throughput Telegram webhook bot engineered to automate customer inquiries, order dispatch notifications, and real-time inventory alerts for local merchants.",
+    highlights: [
+      "Asynchronous webhook processing with low-latency response delivery",
+      "Interactive inline menus and conversational command parsing",
+      "Automated order status dispatchers and merchant channel broadcasts",
+      "Robust error handling and session recovery"
+    ],
+    architecture: {
+      database: "Redis for fast session state tracking and SQLite / PostgreSQL for persistent command logs.",
+      backend: "Python / Node.js async event loop utilizing Telegram Bot API with webhook secret validation.",
+      frontend: "Native Telegram client rich UI components (Inline Keyboards, Dynamic WebApp integration)."
+    },
+    techStack: ["Python", "Telegram Bot API", "Webhooks", "Redis", "Node.js"],
+    status: "Active Bot",
+    statusType: "live",
+    codeAccess: "public",
+    liveUrl: "https://t.me/example_demo_bot",
+    githubUrl: "https://github.com/DulaGudeta/telegram-dispatcher-bot",
     featured: false
   }
 ];
