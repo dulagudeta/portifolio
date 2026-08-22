@@ -33,7 +33,10 @@ export default function Contact({ onShowToast }) {
 
   return (
     <section className="section" id="contact">
-      <div className="container">
+      {/* Subtle Ambient Blurred Accent Glow */}
+      <div className="section-ambient-glow-left" aria-hidden="true"></div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-header">
           <h2 className="section-title">
             <span className="section-title-num">05.</span> Get In Touch
@@ -54,10 +57,8 @@ export default function Contact({ onShowToast }) {
             <h3 className="contact-panel-title">
               Let's build something exceptional together.
             </h3>
-            
-            <p className="contact-panel-desc">
-              I'm always interested in discussing new opportunities, platform engineering, or freelance projects. Feel free to reach out directly.
-            </p>
+
+
 
             <div className="contact-cards-stack">
               {/* Email Card */}

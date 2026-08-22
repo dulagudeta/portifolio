@@ -1,30 +1,33 @@
 import React from 'react';
-import { CheckCircle2, Server, Database, Layout, Shield } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function About() {
   const highlights = [
     {
-      title: "End-to-End System Ownership",
-      desc: "Architecting data models, building secure REST/GraphQL endpoints, and designing accessible frontends."
+      title: "End-to-End Ownership",
+      desc: "Taking ideas from initial requirements and architecture design all the way through to deployment and production maintenance."
     },
     {
-      title: "Hospitality & Healthcare Production",
-      desc: "Proven track record delivering booking engines, staff admin dashboards, live kitchen displays, and patient portals."
+      title: "System Reliability & Security",
+      desc: "Designing secure, performant APIs, resilient data structures, and dependable service integrations."
     },
     {
-      title: "Payment Gateway Integrations",
-      desc: "Expertise implementing seamless Chapa payment checkout flows, automated webhooks, and subscription billing."
+      title: "Clean & Maintainable Code",
+      desc: "Emphasizing modularity, thorough testing, clear documentation, and scalable coding standards."
     },
     {
-      title: "Current Roles",
-      desc: "Full-Stack Developer at Yanol Tech (Feb 2026–Present) and selective freelance development for global clients."
+      title: "User-Centered Engineering",
+      desc: "Bridging solid backend foundations with accessible, responsive, and seamless user experiences."
     }
   ];
 
   return (
     <section className="section" id="about">
-      <div className="container">
+      {/* Subtle Ambient Blurred Accent Glow */}
+      <div className="section-ambient-glow-left" aria-hidden="true"></div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-header">
           <h2 className="section-title">
             <span className="section-title-num">01.</span> About
@@ -38,12 +41,12 @@ export default function About() {
               <p key={index}>{paragraph}</p>
             ))}
             <p>
-              Whether working on an interactive 360° virtual tour with Three.js, building a triage chatbot, or architecting multi-tenant database schemas with PostgreSQL, I focus on clean code, testability, and fast user scanability.
+              I approach every project with an emphasis on clarity, scalability, and long-term maintainability—ensuring that software not only performs reliably under load but also provides a seamless experience for end users.
             </p>
           </div>
 
           <div className="about-card">
-            <h3 className="about-card-title">Core Engineering Capabilities</h3>
+            <h3 className="about-card-title">Core Engineering Principles</h3>
             <ul className="about-highlights-list">
               {highlights.map((item, i) => (
                 <li key={i} className="about-highlight-item">

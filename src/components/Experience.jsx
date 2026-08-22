@@ -5,7 +5,10 @@ import { experienceData, educationData } from '../data/portfolioData';
 export default function Experience() {
   return (
     <section className="section" id="experience">
-      <div className="container">
+      {/* Subtle Ambient Blurred Accent Glow */}
+      <div className="section-ambient-glow-left" aria-hidden="true"></div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-header">
           <h2 className="section-title">
             <span className="section-title-num">04.</span> Experience & Education

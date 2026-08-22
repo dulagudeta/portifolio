@@ -22,7 +22,10 @@ export default function Skills() {
 
   return (
     <section className="section" id="skills">
-      <div className="container">
+      {/* Subtle Ambient Blurred Accent Glow */}
+      <div className="section-ambient-glow-right" aria-hidden="true"></div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-header">
           <h2 className="section-title">
             <span className="section-title-num">02.</span> Technical Skills

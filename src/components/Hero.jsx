@@ -6,7 +6,11 @@ import { personalInfo } from '../data/portfolioData';
 export default function Hero({ onOpenResume }) {
   return (
     <section className="hero-section" id="hero">
-      <div className="container">
+      {/* Subtle Ambient Blurred Accent Shapes */}
+      <div className="hero-ambient-glow-top" aria-hidden="true"></div>
+      <div className="hero-ambient-glow-bottom" aria-hidden="true"></div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="hero-content">
           {/* Status Pill */}
           <div className="hero-status">
