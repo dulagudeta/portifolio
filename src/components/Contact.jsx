@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Copy, Check, Send, ArrowUpRight, AlertCircle } from 'lucide-react';
-import { GithubIcon } from './Icons';
+import { GithubIcon, LinkedinIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
 // Web3Forms API key loaded securely from .env (VITE_WEB3FORMS_ACCESS_KEY)
@@ -132,6 +132,25 @@ export default function Contact({ onShowToast }) {
                   <span className="modern-card-label">GitHub</span>
                   <span className="modern-card-link">
                     github.com/{personalInfo.contacts.githubUsername}
+                  </span>
+                </div>
+                <ArrowUpRight size={16} className="modern-card-arrow" />
+              </a>
+
+              {/* LinkedIn Card */}
+              <a
+                href={personalInfo.contacts.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="modern-contact-card modern-contact-card-interactive"
+              >
+                <div className="modern-card-icon">
+                  <LinkedinIcon size={18} />
+                </div>
+                <div className="modern-card-body">
+                  <span className="modern-card-label">LinkedIn</span>
+                  <span className="modern-card-link">
+                    linkedin.com/in/dulagudeta22
                   </span>
                 </div>
                 <ArrowUpRight size={16} className="modern-card-arrow" />

@@ -62,6 +62,9 @@ export default function Footer({ onOpenResume }) {
           <a href={personalInfo.contacts.github} target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
+          <a href={personalInfo.contacts.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
           <a href={`mailto:${personalInfo.contacts.email}`}>
             Email
           </a>

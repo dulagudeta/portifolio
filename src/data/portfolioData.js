@@ -20,6 +20,7 @@ export const personalInfo = {
     phone: "+251 900 000 000",
     github: "https://github.com/dulagudeta",
     githubUsername: "dulagudeta",
+    linkedin: "https://linkedin.com/in/dulagudeta22",
     location: "Addis Ababa, Ethiopia",
   },
   stats: [
