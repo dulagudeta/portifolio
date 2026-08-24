@@ -23,7 +23,7 @@ export default function Hero({ onOpenResume }) {
           {/* Headline & Title */}
           <h1 className="hero-title">{personalInfo.name}</h1>
           <p className="hero-subtitle">
-            {personalInfo.role} &mdash; <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>React, Node.js, Django</span>
+            {personalInfo.role} | <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>React, Node.js, Django</span>
           </p>
 
           {/* Value Proposition */}

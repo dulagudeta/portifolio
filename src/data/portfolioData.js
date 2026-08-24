@@ -12,7 +12,7 @@ export const personalInfo = {
   resumeUrl: "/Dula_Gudeta_Resume.pdf",
   bio: [
     "I am a full-stack software engineer dedicated to designing, building, and deploying resilient web applications and robust digital platforms.",
-    "My engineering philosophy is rooted in end-to-end ownership—from conceptualizing system architecture and clean data models to delivering polished, intuitive user interfaces.",
+    "My engineering philosophy is rooted in end-to-end ownership, from conceptualizing system architecture and clean data models to delivering polished, intuitive user interfaces.",
     "I focus on writing clean, maintainable code, optimizing system performance, and building scalable software that solves real-world challenges."
   ],
   contacts: {
@@ -246,7 +246,7 @@ export const experienceData = [
     type: "Freelance",
     location: "Remote",
     description:
-      "Delivering custom web platforms end to end for hospitality, healthcare, and commercial businesses. Specializing in payment gateways (Chapa), real-time booking engines, and responsive UIs."
+      "Delivering custom web platforms end to end for hospitality, healthcare, and commercial businesses. Specializing in payment gateways, real-time booking engines, and responsive UIs."
   }
 ];
 

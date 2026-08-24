@@ -23,13 +23,13 @@ TECHNICAL SKILLS
 ${skillsData.map(s => `• ${s.category}: ${s.skills.join(', ')}`).join('\n')}
 
 EXPERIENCE
-${experienceData.map(e => `• ${e.role} — ${e.company} (${e.period})\n  ${e.description}`).join('\n\n')}
+${experienceData.map(e => `• ${e.role} - ${e.company} (${e.period})\n  ${e.description}`).join('\n\n')}
 
 FEATURED PROJECTS
 ${projectsData.map(p => `• ${p.title} (${p.techStack.join(', ')}): ${p.description}`).join('\n\n')}
 
 EDUCATION
-${educationData.map(ed => `• ${ed.degree} — ${ed.institution} (${ed.period})`).join('\n')}
+${educationData.map(ed => `• ${ed.degree} - ${ed.institution} (${ed.period})`).join('\n')}
     `.trim();
 
     navigator.clipboard.writeText(text);
@@ -106,7 +106,7 @@ ${educationData.map(ed => `• ${ed.degree} — ${ed.institution} (${ed.period})
                 <div key={idx} className="resume-experience-entry">
                   <div className="resume-entry-header">
                     <div>
-                      <strong className="resume-entry-role">{item.role}</strong> &mdash; <span>{item.company}</span>
+                      <strong className="resume-entry-role">{item.role}</strong> - <span>{item.company}</span>
                     </div>
                     <span className="resume-entry-date">{item.period}</span>
                   </div>
@@ -142,7 +142,7 @@ ${educationData.map(ed => `• ${ed.degree} — ${ed.institution} (${ed.period})
               <div key={idx} className="resume-experience-entry">
                 <div className="resume-entry-header">
                   <div>
-                    <strong className="resume-entry-role">{edu.degree}</strong> &mdash; <span>{edu.institution}</span>
+                    <strong className="resume-entry-role">{edu.degree}</strong> - <span>{edu.institution}</span>
                   </div>
                   <span className="resume-entry-date">{edu.period}</span>
                 </div>

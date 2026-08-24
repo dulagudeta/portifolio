@@ -236,7 +236,7 @@ button {
 .section {
   position: relative;
   padding: var(--section-spacing-y) 0;
-  /* Transparent — lets the body dot grid always show through */
+  /* Transparent - lets the body dot grid always show through */
   background-color: transparent;
   overflow: clip;
 }

@@ -41,7 +41,7 @@ export default function About() {
               <p key={index}>{paragraph}</p>
             ))}
             <p>
-              I approach every project with an emphasis on clarity, scalability, and long-term maintainability—ensuring that software not only performs reliably under load but also provides a seamless experience for end users.
+              I approach every project with an emphasis on clarity, scalability, and long-term maintainability, ensuring that software not only performs reliably under load but also provides a seamless experience for end users.
             </p>
           </div>
 
