@@ -76,7 +76,7 @@ export default function Contact({ onShowToast }) {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-header">
           <h2 className="section-title">
-            <span className="section-title-num">05.</span> Get In Touch
+            <span className="section-title-num">06.</span> Get In Touch
           </h2>
           <p className="section-subtitle">
             Have a question, opportunity, or project in mind? Let's talk.

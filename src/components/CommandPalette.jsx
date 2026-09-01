@@ -60,6 +60,16 @@ export default function CommandPalette({ isOpen, onClose, onOpenResume, onShowTo
       }
     },
     {
+      id: 'jump-testimonials',
+      title: 'Jump to Testimonials & Impact',
+      category: 'Navigation',
+      icon: <User size={16} />,
+      perform: () => {
+        document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+        onClose();
+      }
+    },
+    {
       id: 'jump-contact',
       title: 'Jump to Contact',
       category: 'Navigation',

@@ -9,7 +9,7 @@ export default function Navbar({ onOpenResume }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'skills', 'projects', 'experience', 'contact'];
+      const sections = ['about', 'skills', 'projects', 'experience', 'testimonials', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -34,6 +34,7 @@ export default function Navbar({ onOpenResume }) {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Testimonials', href: '#testimonials' },
   ];
 
   return (

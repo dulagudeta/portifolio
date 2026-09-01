@@ -259,3 +259,40 @@ export const educationData = [
     notes: "Focus on Distributed Systems, Software Architecture, Database Management, and Algorithms."
   }
 ];
+
+export const testimonialsData = [
+  {
+    id: "testimonial-1",
+    name: "Dr. Henok T.",
+    role: "Project Lead",
+    company: "Yannet Hospital",
+    content:
+      "Dula engineered our hospital portal and triage bot with great speed and precision. Clinical intake and multi-branch booking became seamless.",
+    rating: 5,
+    avatarBg: "linear-gradient(135deg, #2563eb, #3b82f6)",
+    initials: "HT"
+  },
+  {
+    id: "testimonial-2",
+    name: "Yared Bekele",
+    role: "Managing Director",
+    company: "Noora Resort",
+    content:
+      "Dula delivered our entire resort platform—from 360° virtual tours to QR ordering and Chapa payments. Fast, reliable, and high quality.",
+    rating: 5,
+    avatarBg: "linear-gradient(135deg, #059669, #10b981)",
+    initials: "YB"
+  },
+  {
+    id: "testimonial-3",
+    name: "Ebisa Berhanu",
+    role: "Software Engineer",
+    company: "Jimma Institute of Technology",
+    content:
+      "Rock-solid full-stack architecture. The real-time doctor scheduling and automated Chapa subscriptions were deployed ahead of schedule.",
+    rating: 5,
+    avatarBg: "linear-gradient(135deg, #7c3aed, #8b5cf6)",
+    initials: "MS"
+  }
+];
+
