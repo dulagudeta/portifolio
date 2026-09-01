@@ -8,7 +8,7 @@ export default function Testimonials() {
       {/* Subtle Ambient Blurred Accent Glow */}
       <div className="section-ambient-glow-right" aria-hidden="true"></div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="container-wide" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-header">
           <h2 className="section-title">
             <span className="section-title-num">05.</span> Testimonials

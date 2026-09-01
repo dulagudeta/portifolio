@@ -263,36 +263,36 @@ export const educationData = [
 export const testimonialsData = [
   {
     id: "testimonial-1",
-    name: "Dr. Henok T.",
-    role: "Project Lead",
-    company: "Yannet Hospital",
+    name: "Ayana Besha",
+    role: "CTO",
+    company: "Yanol Tech",
     content:
-      "Dula engineered our hospital portal and triage bot with great speed and precision. Clinical intake and multi-branch booking became seamless.",
+      "Dula is a high-ownership engineer. He architected our full-stack solutions and payment integrations with exceptional code quality and speed.",
     rating: 5,
     avatarBg: "linear-gradient(135deg, #2563eb, #3b82f6)",
-    initials: "HT"
+    initials: "AB"
   },
   {
     id: "testimonial-2",
-    name: "Yared Bekele",
-    role: "Managing Director",
-    company: "Noora Resort",
+    name: "Debela Fufa",
+    role: "Client",
+    company: "Independent Project",
     content:
-      "Dula delivered our entire resort platform—from 360° virtual tours to QR ordering and Chapa payments. Fast, reliable, and high quality.",
+      "Dula delivered our digital platform ahead of schedule with seamless payment integration. Highly dependable, skilled, and communicative throughout.",
     rating: 5,
     avatarBg: "linear-gradient(135deg, #059669, #10b981)",
-    initials: "YB"
+    initials: "DF"
   },
   {
     id: "testimonial-3",
     name: "Ebisa Berhanu",
     role: "Software Engineer",
-    company: "Jimma Institute of Technology",
+    company: "Jimma Institute of Technology (JIT)",
     content:
-      "Rock-solid full-stack architecture. The real-time doctor scheduling and automated Chapa subscriptions were deployed ahead of schedule.",
+      "Collaborating with Dula on engineering projects is a breeze. He brings strong backend design, clean architecture, and rapid problem-solving skills.",
     rating: 5,
     avatarBg: "linear-gradient(135deg, #7c3aed, #8b5cf6)",
-    initials: "MS"
+    initials: "EB"
   }
 ];
 
