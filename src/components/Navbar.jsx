@@ -60,78 +60,81 @@ export default function Navbar({ onOpenResume }) {
 
         {/* Header Actions */}
         <div className="nav-actions">
-          {/* Direct PDF Resume Link */}
+          {/* Direct PDF Resume Link (Desktop) */}
           <a
             href={personalInfo.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
             download="Dula_Gudeta_Resume.pdf"
-            className="btn btn-secondary btn-sm"
+            className="btn btn-secondary btn-sm nav-desktop-action"
             aria-label="Download PDF Resume"
             title="Download official PDF resume"
           >
             <FileDown size={14} />
-            <span style={{ fontSize: '0.8rem', fontWeight: 500 }}>Resume PDF</span>
+            <span style={{ fontSize: '0.8rem', fontWeight: 600 }}>Resume</span>
           </a>
 
-          {/* Direct GitHub Profile */}
+          {/* Direct GitHub Profile (Desktop) */}
           <a
             href={personalInfo.contacts.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-ghost btn-sm nav-gh-btn"
+            className="btn btn-ghost btn-sm nav-desktop-action nav-gh-btn"
             aria-label="GitHub Profile"
           >
             <GithubIcon size={16} />
           </a>
 
-          <a href="#contact" className="btn btn-primary btn-sm">
+          {/* Contact CTA (Desktop) */}
+          <a href="#contact" className="btn btn-primary btn-sm nav-desktop-action">
             <span>Contact</span>
           </a>
 
+          {/* Mobile Menu Toggle Button */}
           <button
             className="mobile-nav-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+            aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div className="mobile-menu-drawer">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="nav-link"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {link.name}
-            </a>
-          ))}
+          <nav className="mobile-nav-list" aria-label="Mobile Navigation">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`mobile-nav-link ${activeSection === link.href.slice(1) ? 'active' : ''}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
 
-          <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
+          <div className="mobile-menu-actions">
             <a
               href="#contact"
-              className="btn btn-primary btn-sm"
-              style={{ flex: 1 }}
+              className="btn btn-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <span>Contact</span>
+              <span>Get In Touch</span>
             </a>
             <a
               href={personalInfo.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               download="Dula_Gudeta_Resume.pdf"
-              className="btn btn-secondary btn-sm"
-              style={{ flex: 1 }}
+              className="btn btn-secondary"
             >
-              <FileDown size={14} />
-              <span>Resume PDF</span>
+              <FileDown size={15} />
+              <span>Resume (PDF)</span>
             </a>
           </div>
         </div>

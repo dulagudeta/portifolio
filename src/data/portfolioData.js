@@ -172,19 +172,18 @@ export const projectsData = [
   },
   {
     id: "LNSS",
-    title: "Local-Network-Security-Scanner-LNSS",
-    tagline: "A defensive cybersecurity tool that scans a local network ].",
+    title: "Local Network Security Scanner (LNSS)",
+    tagline: "A defensive cybersecurity CLI tool that scans local networks for vulnerabilities",
     categories: ["systems"],
     description:
-      "A defensive cybersecurity tool that scans a local network to identify connected devices, exposed services, and potential security risks. built with python",
+      "A defensive cybersecurity CLI tool built with Python and Nmap that scans local networks to identify connected devices, detect exposed ports/services, and flag potential security risks.",
     highlights: [
-      "Detects Which devices are connected to ypur network?",
-      "identify What services and ports are exposed?",
-      "Tell insecure or risky configurations?",
-      "Nmap used"
+      "Detects connected network devices",
+      "Identifies exposed services and open ports",
+      "Flags insecure network configurations",
+      "Powered by Nmap integration"
     ],
-
-    techStack: ["Python", "CLI", "NMap"],
+    techStack: ["Python", "CLI", "Nmap", "Network Security"],
     status: "Open Source",
     statusType: "open-source",
     codeAccess: "public",
@@ -194,23 +193,23 @@ export const projectsData = [
   },
   {
     id: "Telegram-Auto-Reply-Bot",
-    title: "Telegram-Auto-Reply-Bot",
-    tagline: "A simple Python bot that automatically replies to messages when you're offline",
+    title: "Telegram Auto-Reply Bot",
+    tagline: "Asynchronous Python bot for automated offline messaging and forwarding",
     categories: ["bots", "systems"],
     description:
-      "A simple bot that replies to messages when you're offline Because sometimes you need a digital secretary",
+      "An asynchronous Python Telegram bot leveraging webhooks and Redis to provide smart offline auto-replies, typing simulation, and instant priority message forwarding.",
     highlights: [
-      "Automatically reply to private messages",
-      "Let people know you'll get back to them later",
-      "Forward urgent messages to you immediately",
-      "Pretend to be typing (like a real person would)"
+      "Automated private message replies",
+      "Intelligent offline status alerts",
+      "Immediate urgent message forwarding",
+      "Simulated typing behavior"
     ],
     architecture: {
       database: "Redis for fast session state tracking and SQLite / PostgreSQL for persistent command logs.",
-      backend: "Python  async event loop utilizing Telegram Bot API with webhook secret validation.",
+      backend: "Python async event loop utilizing Telegram Bot API with webhook secret validation.",
       frontend: "Native Telegram client rich UI components (Inline Keyboards, Dynamic WebApp integration)."
     },
-    techStack: ["Python", "Telegram Bot API", "Webhooks", "Redis",],
+    techStack: ["Python", "Telegram Bot API", "Webhooks", "Redis"],
     status: "Active Bot",
     statusType: "live",
     codeAccess: "public",
