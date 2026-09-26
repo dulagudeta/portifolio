@@ -223,7 +223,7 @@ export const experienceData = [
   {
     role: "Full-Stack Developer",
     company: "Yanol Tech",
-    period: "Feb 2026 – Present",
+    period: "Feb 2026 – Sep 2026",
     type: "Full-time",
     location: "Addis Ababa, Ethiopia",
     description:
@@ -292,6 +292,17 @@ export const testimonialsData = [
     rating: 5,
     avatarBg: "linear-gradient(135deg, #7c3aed, #8b5cf6)",
     initials: "EB"
+  },
+  {
+    id: "testimonial-4",
+    name: "Anam Tesfa",
+    role: "Software Engineer",
+    company: "Jimma Institute of Technology (JIT)",
+    content:
+      "Dula's ability to translate complex software requirements into elegant, high-performance systems is outstanding. A dedicated engineer who consistently delivers excellence.",
+    rating: 5,
+    avatarBg: "linear-gradient(135deg, #0284c7, #38bdf8)",
+    initials: "AT"
   }
 ];
 
